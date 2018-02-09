@@ -1,0 +1,49 @@
+{
+    "name": "discoverer",
+    "description": "Custom theme for The Discoverer blog",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=1.2.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "Inboxlab",
+        "email": "zack@inboxlab.com",
+        "url": "https://www.inboxlab.com"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Magazine"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "scripts": {
+        "dev": "concurrently \"npm run sync\" \"npm run watch\" \"npm run sass\"",
+        "sync": "browser-sync start --port 4444 --proxy http://localhost:2369 --files 'assets/**/*' --no-ghost-mode",
+        "watch": "cd ../../.. && nodemon current/index.js --watch content/themes/discoverer --ext hbs,js",
+        "sass": "gulp watch",
+        "start": "gulp"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.18.13",
+        "concurrently": "^3.5.1",
+        "gulp": "3.9.1",
+        "gulp-autoprefixer": "^4.0.0",
+        "gulp-nodemon": "^2.2.1",
+        "gulp-sass": "^3.1.0",
+        "gulp-zip": "4.0.0",
+        "nodemon": "^1.14.11"
+    },
+    "config": {
+        "posts_per_page": 25
+    }
+}
