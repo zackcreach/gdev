@@ -1,0 +1,91 @@
+.banner {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  
+  &--header {
+      height: 78px;
+  }
+
+  &--footer {
+      height: 100px;
+
+      @include atMedium {
+          height: 94px;
+      }
+  }
+
+  &--border-top {
+      border-top: 1px solid #E3E3E3;
+  }
+  
+  &--border-bottom {
+      border-bottom: 1px solid #E3E3E3;
+  }
+  
+  &__container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      @include atMedium {
+          justify-content: space-between;
+          padding: 0 120px 0 120px;
+      }
+      
+    @include atXLarge {
+        padding: 0;
+        margin: 0 auto 0 auto;
+        max-width: $container-1200;
+    }
+  }
+
+  &__logo {
+      width: 171px;
+      
+      @include atMedium {
+          width: 150px;
+          margin-right: 40px;
+      }
+  }
+  
+  &__logo-image {
+      padding: 0 0 0 0;
+      
+      @include atMedium {
+          width: 100%;
+      }
+      
+  }
+
+  &__navigation {
+      @include hidden
+
+      @include atCustom(1065px) {
+          @include visible
+          min-width: 600px;
+          margin-right: 45px;
+      }
+
+      @include atCustom(1515px) {
+          margin-right: 0;
+      }
+  }
+
+  &__social {
+      @include hidden;
+
+      @include atMedium {
+          @include visible;
+          position: absolute;
+          display: flex;
+          right: 32px;
+          align-items: center;
+      }
+  }
+}

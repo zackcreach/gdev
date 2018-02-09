@@ -1,0 +1,78 @@
+.hero {
+
+	&--t-margin {
+		margin: 80px auto 0 auto;
+	}
+
+	&__background {
+		background-position: center;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		
+		&::after {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(0deg, rgba(255, 255, 255, 0.33), white 90%);
+		}
+
+	}
+
+	&__post, &__tag {
+		height: 300px;
+		overflow: hidden;
+		position: relative;
+				
+		@include atMedium {
+			height: 436px;
+		}
+	}
+
+	&__content {
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			text-align: left;
+			display: flex;
+			padding: 0 $gutter-spacing-mobile 0 $gutter-spacing-mobile;
+
+			& > * {
+				pointer-events: auto;
+			}
+			
+			@include atMedium {
+				padding: 0 $gutter-spacing-desktop 0 $gutter-spacing-desktop;
+			}
+	
+			@include atXLarge {
+				padding: 0;
+				margin: 0 auto 0 auto;
+				max-width: $container-1200;
+			}
+	}
+	
+	&__carousel {
+		position: relative;
+	}
+
+	&__arrows {
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 70px;
+	}
+
+	&__progress {
+		padding: 80px 0 46px 0;
+		display: flex;
+		justify-content: center;
+	}
+}

@@ -2,32 +2,27 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
+{{> "banner"}}
 {{#tag}}
-<header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
-    <div class="inner">
-        {{> "site-nav"}}
-        <div class="site-header-content">
-            <h1 class="site-title">{{name}}</h1>
-            <h2 class="site-description">
-                {{#if description}}
-                    {{description}}
-                {{else}}
-                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </h2>
+    <div class="hero hero__tag">
+        <div class="hero__background" style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{asset 'images/header-hero-background.jpg'}}{{/if}}); background-size: cover;"></div>
+        <div class="hero__content">
+                <h3 class="hero__subtitle">
+                    Discover On
+                </h3>
+                <h1 class="hero__title">
+                    {{name}}
+                </h1>
         </div>
     </div>
-</header>
 {{/tag}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-        <div class="post-feed">
-            {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-            {{/foreach}}
-        </div>
+<main id="site-main" class="container tag" role="main">
+    <div class="post-feed">
+        {{#foreach posts}}
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+        {{/foreach}}
     </div>
 </main>

@@ -50,7 +50,7 @@ gulp.task("sass", () => {
                 browsers: "last 3 versions",
             }),
         )
-        .pipe(gulp.dest("./assets/built"))
+        .pipe(gulp.dest("./assets/styles"))
         .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -68,6 +68,12 @@ gulp.task("zip", ["sass"], () => {
         .pipe(zip(filename))
         .pipe(gulp.dest(targetDir));
 });
+
+gulp.task("transfer", () => {
+    return gulp
+        .src("./**/*")
+        .pipe(gulp.dest("../../../../dscvrr-blog-prod/content/themes/discoverer"))
+})
 
 // gulp.task('default', ['build'], function () {
 //     gulp.start('watch');
