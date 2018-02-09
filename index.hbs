@@ -72,7 +72,7 @@
                 <div class="hero__carousel">
                     <div class="carousel">
                         <article class="carousel__item">
-                            <h3 class="carousel__subtitle">{{tag}}</h3>
+                            <h3 class="carousel__subtitle">{{#primary_tag}}{{name}}{{/primary_tag}}</h3>
                             <h1 class="carousel__title">{{title}}</h1>
                             <a href="{{url}}">
                                 <button class="button button__clear carousel__button">
@@ -109,13 +109,13 @@
         {{#get "posts" include="tags" filter="tags:featured"}}
             {{#foreach posts limit="3"}}
                 <article class="featured__item">
-                    {{#tags.[1]}}
+                    {{#primary_tag}}
                         <a href="{{url}}">
                             <h3 class="featured__subtitle">
                                 {{name}}
                             </h3>
                         </a>
-                    {{/tags.[1]}}
+                    {{/primary_tag}}
                     <a href="{{url}}">
                         <h2 class="featured__title">
                             {{title}}

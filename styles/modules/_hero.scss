@@ -57,6 +57,10 @@
 				max-width: $container-1200;
 			}
 	}
+
+	&__title {
+		max-width: 800px;
+	}
 	
 	&__carousel {
 		position: relative;
