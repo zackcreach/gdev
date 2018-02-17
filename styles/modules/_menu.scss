@@ -82,9 +82,11 @@
 
     &__header-logo {
         width: 171px;
+        max-height: 23.38px;
         
         @include atMedium {
             width: 150px;
+            max-height: 20.52px;
             margin-left: 50px;
         }
     }
@@ -121,7 +123,7 @@
     
     &__nav-secondary {
         max-width: 250px;
-        margin: 32px 0 0 36px;
+        margin: 32px 0 40px 36px;
     }
 
     &__nav-secondary-item {

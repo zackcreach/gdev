@@ -47,9 +47,11 @@
 
   &__logo {
       width: 171px;
+      max-height: 23.38px;
       
       @include atMedium {
           width: 150px;
+          max-height: 20.52px;
           margin-right: 40px;
       }
   }

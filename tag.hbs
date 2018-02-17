@@ -1,14 +1,15 @@
 {{!< default}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{!-- The big featured header, it uses blog cover image as a BG if available --}}
 {{> "banner"}}
+
 {{#tag}}
     <div class="hero hero__tag">
         <div class="hero__background" style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{asset 'images/header-hero-background.jpg'}}{{/if}}); background-size: cover;"></div>
         <div class="hero__content">
                 <h3 class="hero__subtitle">
-                    Discover On
+                    <a href="/" class="hero__link">
+                        Discover On
+                    </a>
                 </h3>
                 <h1 class="hero__title">
                     {{name}}

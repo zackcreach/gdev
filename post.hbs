@@ -1,11 +1,7 @@
 {{!< default}}
 
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
-
 {{> "banner"}}
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 <div class="post">
     <div class="hero hero__post">
@@ -13,7 +9,9 @@ into the {body} of the default.hbs template --}}
         <div class="hero__content">
                 <h3 class="hero__subtitle">
                     {{#primary_tag}}
-                        {{name}}
+                        <a class="hero__link" href={{url}}>
+                            {{name}}
+                        </a>
                     {{/primary_tag}}
                 </h3>
                 <h1 class="hero__title">

@@ -1133,10 +1133,10 @@ body {
   margin: 0
 }
 
-.post-template .kg-card-markdown>p:first-child {
+/* .post-template .kg-card-markdown>p:first-child {
   font-size: 1.25em;
   line-height: 1.5em
-}
+} */
 
 .post-full-content a {
   color: #000;

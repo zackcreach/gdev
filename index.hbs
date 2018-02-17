@@ -1,50 +1,8 @@
 {{!< default}}
 <div class="header__menu">
     <div class="menu menu__hero">
-        <div class="linework linework__menu--white" />
-        <div class="menu__window-container" aria-hidden="true">
-            <div class="menu__window">
-                <div class="menu__header">
-                    <div class="menu__header-content">
-                        <div class="linework linework__menu menu__header-linework">
-                        </div>
-                        <div class="menu__header-logo">
-                            <a href="https://thediscoverer.com">
-                                <img class="menu__logo-image" src="{{asset "images/logo-black.png"}}" alt="The Discoverer Logo" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu__nav-primary">
-                    <a href="https://thediscoverer.com" class="menu__nav-primary-link">
-                        Home
-                    </a>
-                    <a href="https://thediscoverer.com/story" class="menu__nav-primary-link">
-                        Our Story
-                    </a>
-                    <a href="https://thediscoverer.com/destinations" class="menu__nav-primary-link">
-                        Upcoming Destinations
-                    </a>
-                    <a href="https://thediscoverer.com/editions" class="menu__nav-primary-link">
-                        Previous Editions
-                    </a>
-                </div>
-                <hr class="menu__divider" />
-                <div class="menu__nav-secondary">
-                    <a href="https://thediscoverer.com/testimonials" class="menu__nav-secondary-link">
-                        Testimonials
-                    </a>
-                    <a href="https://thediscoverer.com/dmca" class="menu__nav-secondary-link">
-                        DMCA
-                    </a>
-                    <a href="https://thediscoverer.com/privacy" class="menu__nav-secondary-link">
-                        Privacy Policy
-                    </a>
-                    <a href="https://thediscoverer.com/contact" class="menu__nav-secondary-link">
-                        Contact Us
-                    </a>
-                </div>
-            </div>
+        <div class="linework linework__menu--white">
+            {{> "menu"}}
         </div>
     </div>
 </div>
@@ -224,46 +182,46 @@
         {{/get}}
         <aside class="itinerary__schedule">
             <h1 class="itinerary__heading">
-                My Weekend Itinerary in Valparaíso, Chile
+                Itinerary: Mont Saint Michel
             </h1>
             <ul class="itinerary__list">
                 <li class="itinerary__item">
-                    <div class="itinerary__thumbnail" style="background-image: url({{asset "images/categories-ourbackpack-background.jpg"}}); background-size: cover;"></div>
+                    <div class="itinerary__thumbnail" style="background-image: url({{asset "images/itinerary-1.jpg"}}); background-size: cover;"></div>
                     <h5 class="itinerary__subtitle">
-                        Friday
+                        Morning
                     </h5>
-                    <p class="itinerary__text">
+                    {{!-- <p class="itinerary__text">
                         <span class="itinerary__text--highlight">8:00am</span> - Coastal Cruisin
-                    </p>
+                    </p> --}}
                     <p class="itinerary__text">
-                        “Catch a boat ride from Muelle Prat. You won’t find any luxury cruises here, but you’ll have a blast…”
-                        <a href="" class="itinerary__link">Read More</a>
+                        The castle’s world-renowned beauty attracts a slew of visitors each day so <b>get there early!</b>
+                        {{!-- <a href="" class="itinerary__link">Read More</a> --}}
                     </p>
                 </li>
                 <li class="itinerary__item">
-                    <div class="itinerary__thumbnail" style="background-image: url({{asset "images/categories-ourbackpack-background.jpg"}}); background-size: cover;"></div>
+                    <div class="itinerary__thumbnail" style="background-image: url({{asset "images/itinerary-2.jpg"}}); background-size: cover;"></div>
                     <h5 class="itinerary__subtitle">
-                        Saturday
+                        Afternoon
                     </h5>
-                    <p class="itinerary__text">
+                    {{!-- <p class="itinerary__text">
                         <span class="itinerary__text--highlight">5:00am</span> - Let’s Take this Art to the Street
-                    </p>
+                    </p> --}}
                     <p class="itinerary__text">
-                        “Start the day off on the streets. You’ve heard of street art, but Valparaíso takes this concept to a whole new level…”
-                        <a href="" class="itinerary__link">Read More</a>
+                        This tiny island is packed full of historical and natural wonders to explore!
+                        {{!-- <a href="" class="itinerary__link">Read More</a> --}}
                     </p>
                 </li>
                 <li class="itinerary__item">
-                    <div class="itinerary__thumbnail" style="background-image: url({{asset "images/categories-ourbackpack-background.jpg"}}); background-size: cover;"></div>
+                    <div class="itinerary__thumbnail" style="background-image: url({{asset "images/itinerary-3.jpg"}}); background-size: cover;"></div>
                     <h5 class="itinerary__subtitle">
-                        Sunday
+                        Night
                     </h5>
-                    <p class="itinerary__text">
+                    {{!-- <p class="itinerary__text">
                         <span class="itinerary__text--highlight">8:00am</span> - I'm All the Way Up
-                    </p>
+                    </p> --}}
                     <p class="itinerary__text">
-                        “Valpo," as the locals call it, is built on a series of hills or “cerros”, making this city a vertical challenge…”
-                        <a href="" class="itinerary__link">Read More</a>
+                        Time your departure from the island with the setting sun to catch the gorgeous golden rays illuminating the island from a distance.
+                        {{!-- <a href="" class="itinerary__link">Read More</a> --}}
                     </p>
                 </li>
             </ul>
