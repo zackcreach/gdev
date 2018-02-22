@@ -1,18 +1,15 @@
 <section class="gallery">
     <div class="container container--1400 row gallery__container">
-        {{#get "posts" filter="tags:gallery"}}
-            {{#foreach posts limit="4"}}
-                <a href="{{url}}" class="row__col-3 gallery__item" style="background-image: url({{feature_image}}); background-size: cover;">
-                    <h4 class="gallery__title">
-                        {{title}}
-                    </h4>
-                </a>
+        {{#get "posts" limit="4" filter="tags:{{tags.1.slug}}+id:-{{id}}" as |secondary_tag|}}
+            {{#foreach posts}}
+                {{#if secondary_tag}}
+                    <a href="{{url}}" class="gallery__item" style="background-image: url({{feature_image}}); background-size: cover;">
+                        <h4 class="gallery__title">
+                            {{title}}
+                        </h4>
+                    </a>
+                {{/if}}
             {{/foreach}}
-            {{!-- <a href="" class="row__col-3 gallery__item" style="background-image: url({{asset "images/article-1.jpg"}}); background-size: cover;">
-                <h4 class="gallery__title">
-                    Les Houches The Hidden Gem Of The Chamonix Valley
-                </h4>
-            </a> --}}
         {{/get}}
     </div>
 </section>

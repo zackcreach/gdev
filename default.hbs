@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     {{#is "home"}}
-        <title>The Discoverer Blog</title>
+        <title>{{@blog.title}}</title>
     {{else}}
-        <title>The Discoverer Blog | {{meta_title}}</title>
+        <title>{{@blog.title}} | {{meta_title}}</title>
     {{/is}}
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Open+Sans:300,400,600,800">
@@ -45,6 +45,9 @@
             data-ad-client="ca-pub-9724963759311479"
             data-ad-slot="9873879387"></ins> --}}
     {{/is}}
+
+    {{!-- Discoverer Bundle --}}
+    <script type="text/javascript" src="{{asset "js/bundle.js"}}"></script>
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
     <script

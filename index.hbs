@@ -91,7 +91,24 @@
         {{/get}}
     </div>
 </section>
-{{> "gallery"}}
+<section class="gallery">
+    <div class="container container--1400 row gallery__container">
+        {{#get "posts" filter="tags:gallery"}}
+            {{#foreach posts limit="4"}}
+                <a href="{{url}}" class="row__col-3 gallery__item" style="background-image: url({{feature_image}}); background-size: cover;">
+                    <h4 class="gallery__title">
+                        {{title}}
+                    </h4>
+                </a>
+            {{/foreach}}
+            {{!-- <a href="" class="row__col-3 gallery__item" style="background-image: url({{asset "images/article-1.jpg"}}); background-size: cover;">
+                <h4 class="gallery__title">
+                    Les Houches The Hidden Gem Of The Chamonix Valley
+                </h4>
+            </a> --}}
+        {{/get}}
+    </div>
+</section>
 <section class="itinerary">
     <div class="container itinerary__container">
         {{#get "posts" include="tags" filter="tags:itinerary"}}
