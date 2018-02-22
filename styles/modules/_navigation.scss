@@ -3,10 +3,10 @@
     
     @include atCustom(900px) {
         margin-left: 40px;
-        padding-bottom: 6px;
+        padding-bottom: 4px;
         @include visible;
         width: 100%;
-        min-width: 550px;
+        min-width: 600px;
         max-width: 660px;
         display: flex;
         justify-content: space-between;
@@ -20,7 +20,7 @@
         font-weight: 600;
         color: white;
         transition: all 0.75s ease;
-        text-shadow: 1px 1px 4px #AAA;
+        text-shadow: 1px 1px 2px #888;
 
         &::after {
             position: absolute;

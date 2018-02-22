@@ -1,30 +1,11 @@
 {{!< default}}
-<div class="header__menu">
-    <div class="menu menu__hero">
-        <div class="linework linework__menu--white">
-            {{> "menu"}}
-        </div>
-    </div>
-</div>
-<header class="header">
-    <div class="header__logo">
-        <a href="/">
-            <img class="header__logo-image" src="{{asset "images/logo-white.png"}}" alt="The Discoverer Logo" />
-        </a>
-    </div>
-    <nav class="navigation">
-        <a class="navigation__link" href="/">All</a>
-        <a class="navigation__link" href="/tag/discoveries">Discoveries</a>
-        <a class="navigation__link" href="/tag/travel-tales">Travel Tales</a>
-        <a class="navigation__link" href="/tag/guide-me">Guide Me</a>
-        <a class="navigation__link" href="/tag/our-backpack">Our Backpack</a>
-        <a class="navigation__link" href="/tag/discoverer-spotlight">Discoverer Spotlight</a>
-    </nav>
-</header>
+
+{{> "banner"}}
+
 {{#get "posts" filter="tags:hero"}}
     {{#foreach posts limit="1"}}
-        <div class="header__background" style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{asset 'images/header-hero-background.jpg'}}{{/if}}); background-size: cover;"></div>
-        {{!-- <div class="header__background" style="background-image: url({{asset "images/header-hero-background.jpg"}}); background-size: cover;"></div> --}}
+        <div class="banner__background" style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{asset 'images/banner-hero-background.jpg'}}{{/if}}); background-size: cover;"></div>
+        {{!-- <div class="banner__background" style="background-image: url({{asset "images/header-hero-background.jpg"}}); background-size: cover;"></div> --}}
         <section class="hero hero--t-margin">
             <div class="container container--1400">
                 <div class="hero__carousel">
@@ -37,7 +18,7 @@
                                     Read More
                                 </button>
                             </a>
-                            {{!-- <h3 class="carousel__subtitle">Guide Me</h3>
+                            {{!-- <h3 class="carousel__subtitle">Tips &amp; Tricks</h3>
                             <h1 class="carousel__title">Lorem Ipsum Dolor Sit Amet Consectetuer Adipiscing Elit Sed Diam Nonummy Nibh.</h1>
                             <a href="">
                                 <button class="button button__clear carousel__button">
@@ -79,7 +60,7 @@
                             {{title}}
                         </h2>
                         <p class="featured__text">
-                            {{excerpt words="22"}}
+                            {{excerpt words="22"}}...
                         </p>
                     </a>
                 </article>
@@ -110,24 +91,7 @@
         {{/get}}
     </div>
 </section>
-<section class="gallery">
-    <div class="container container--1400 row gallery__container">
-        {{#get "posts" filter="tags:gallery"}}
-            {{#foreach posts limit="4"}}
-                <a href="{{url}}" class="row__col-3 gallery__item" style="background-image: url({{feature_image}}); background-size: cover;">
-                    <h4 class="gallery__title">
-                        {{title}}
-                    </h4>
-                </a>
-            {{/foreach}}
-            {{!-- <a href="" class="row__col-3 gallery__item" style="background-image: url({{asset "images/article-1.jpg"}}); background-size: cover;">
-                <h4 class="gallery__title">
-                    Les Houches The Hidden Gem Of The Chamonix Valley
-                </h4>
-            </a> --}}
-        {{/get}}
-    </div>
-</section>
+{{> "gallery"}}
 <section class="itinerary">
     <div class="container itinerary__container">
         {{#get "posts" include="tags" filter="tags:itinerary"}}
@@ -139,16 +103,21 @@
                                 {{title}}
                             </h2>
                             <p class="itinerary__text">
-                                {{excerpt words="30"}}
+                                {{excerpt words="30"}}...
                             </p>
                         </a>
-                        <div class="itinerary__categories">
+                        {{!-- <div class="itinerary__categories">
                             {{#foreach tags limit="6"}}
                                 <a class="itinerary__category" href="{{url}}">
                                     {{name}}
                                 </a>
                             {{/foreach}}
-                        </div>
+                        </div> --}}
+                        <a href="{{url}}">
+                            <button class="button button__clear itinerary__button">
+                                Read More
+                            </button>
+                        </a>
                     </div>
                 </article>
             {{/foreach}}
@@ -182,48 +151,24 @@
         {{/get}}
         <aside class="itinerary__schedule">
             <h1 class="itinerary__heading">
-                Itinerary: Mont Saint Michel
+                Read More
             </h1>
             <ul class="itinerary__list">
-                <li class="itinerary__item">
-                    <div class="itinerary__thumbnail" style="background-image: url({{asset "images/itinerary-1.jpg"}}); background-size: cover;"></div>
-                    <h5 class="itinerary__subtitle">
-                        Morning
-                    </h5>
-                    {{!-- <p class="itinerary__text">
-                        <span class="itinerary__text--highlight">8:00am</span> - Coastal Cruisin
-                    </p> --}}
-                    <p class="itinerary__text">
-                        The castle’s world-renowned beauty attracts a slew of visitors each day so <b>get there early!</b>
-                        {{!-- <a href="" class="itinerary__link">Read More</a> --}}
-                    </p>
-                </li>
-                <li class="itinerary__item">
-                    <div class="itinerary__thumbnail" style="background-image: url({{asset "images/itinerary-2.jpg"}}); background-size: cover;"></div>
-                    <h5 class="itinerary__subtitle">
-                        Afternoon
-                    </h5>
-                    {{!-- <p class="itinerary__text">
-                        <span class="itinerary__text--highlight">5:00am</span> - Let’s Take this Art to the Street
-                    </p> --}}
-                    <p class="itinerary__text">
-                        This tiny island is packed full of historical and natural wonders to explore!
-                        {{!-- <a href="" class="itinerary__link">Read More</a> --}}
-                    </p>
-                </li>
-                <li class="itinerary__item">
-                    <div class="itinerary__thumbnail" style="background-image: url({{asset "images/itinerary-3.jpg"}}); background-size: cover;"></div>
-                    <h5 class="itinerary__subtitle">
-                        Night
-                    </h5>
-                    {{!-- <p class="itinerary__text">
-                        <span class="itinerary__text--highlight">8:00am</span> - I'm All the Way Up
-                    </p> --}}
-                    <p class="itinerary__text">
-                        Time your departure from the island with the setting sun to catch the gorgeous golden rays illuminating the island from a distance.
-                        {{!-- <a href="" class="itinerary__link">Read More</a> --}}
-                    </p>
-                </li>
+                {{#get "posts" filter="tags:read-more"}}
+                    {{#foreach posts limit="3"}}
+                        <li class="itinerary__item">
+                            <a href="{{url}}" class="itinerary__link">
+                                <div class="itinerary__thumbnail" style="background-image: url({{feature_image}}); background-size: cover;"></div>
+                                <h5 class="itinerary__subtitle">
+                                    {{title}}
+                                </h5>
+                                <p class="itinerary__text">
+                                    {{excerpt words="16"}}...
+                                </p>
+                            </a>
+                        </li>
+                    {{/foreach}}
+                {{/get}}
             </ul>
         </aside>
     </div>
@@ -241,9 +186,9 @@
                     Our Backpack
                 </p>
             </a>
-            <a href="/tag/guide-me" class="categories__block" style="background-image: url({{asset "images/categories-guideme-background.jpg"}}); background-size: cover;">
+            <a href="/tag/tips-tricks" class="categories__block" style="background-image: url({{asset "images/categories-tipstricks-background.jpg"}}); background-size: cover;">
                 <p class="categories__text">
-                    Guide Me
+                    Tips &amp; Tricks
                 </p>
             </a>
             <a href="/tag/travel-tales" class="categories__block" style="background-image: url({{asset "images/categories-traveltales-background.jpg"}}); background-size: cover;">
@@ -259,4 +204,3 @@
         </div>
     </div>
 </section>
-

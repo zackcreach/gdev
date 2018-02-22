@@ -4,11 +4,11 @@
 
 {{#tag}}
     <div class="hero hero__tag">
-        <div class="hero__background" style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{asset 'images/header-hero-background.jpg'}}{{/if}}); background-size: cover;"></div>
+        <div class="hero__background" style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{asset 'images/banner-hero-background.jpg'}}{{/if}}); background-size: cover;"></div>
         <div class="hero__content">
                 <h3 class="hero__subtitle">
                     <a href="/" class="hero__link">
-                        Discover On
+                        Discoverer Blog
                     </a>
                 </h3>
                 <h1 class="hero__title">
@@ -27,3 +27,4 @@
         {{/foreach}}
     </div>
 </main>
+{{> "gallery"}}

@@ -1,12 +1,14 @@
 .hero {
 
 	&--t-margin {
-		margin: 80px auto 0 auto;
+		margin: 180px auto 0 auto;
 	}
 
 	&__background {
 		background-position: center 75%;
 		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
 		z-index: -1;
@@ -18,7 +20,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background: linear-gradient(0deg, rgba(255, 255, 255, 0.33), white 90%);
+			background: rgba(80, 80, 80, 0.6);
 		}
 
 	}
@@ -29,7 +31,7 @@
 		position: relative;
 				
 		@include atMedium {
-			height: 436px;
+			height: 300px;
 		}
 	}
 
@@ -41,18 +43,18 @@
 			height: 100%;
 			text-align: left;
 			display: flex;
-			padding: 0 $gutter-spacing-mobile 0 $gutter-spacing-mobile;
+			padding: 35px $gutter-spacing-mobile 0 $gutter-spacing-mobile;
 
 			& > * {
 				pointer-events: auto;
 			}
 			
 			@include atMedium {
-				padding: 0 $gutter-spacing-desktop 0 $gutter-spacing-desktop;
+				padding: 35px $gutter-spacing-desktop 0 $gutter-spacing-desktop;
 			}
 	
 			@include atXLarge {
-				padding: 0;
+				padding: 35px 0 0 0;
 				margin: 0 auto 0 auto;
 				max-width: $container-1200;
 			}
@@ -60,17 +62,33 @@
 
 	&__title {
 		max-width: 625px;
+		color: white;
+		font-size: 1.87rem;
+		line-height: 37px;
+		
+		@include atMedium {
+			font-size: 1.87rem;
+			line-height: 37px;
+		}
 	}
 
 	&__subtitle {
+		color: white;
 		padding: 0 0 18px 0;
+		font-size: 0.93rem;
+		line-height: 19px;
+		
+		@include atMedium {
+			font-size: 0.93rem;
+			line-height: 19px;
+		}
 	}
 
 	&__link {
 		color: inherit;
 
     &:hover {
-      color: #222;
+      color: white;
     }
 	}
 	
