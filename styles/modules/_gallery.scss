@@ -25,6 +25,8 @@
     @include atMedium {
       width: auto;
       flex: 1;
+      margin: 0 auto 80px auto;
+
     }
     
     &::before {
@@ -44,7 +46,7 @@
   }
 
   &__title {
-    padding: 0 20px 0 30px;
+    padding: 0 20px 30px 30px;
     color: #FFFFFF;
     min-height: 80px;
     z-index: 1;
