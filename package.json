@@ -27,13 +27,16 @@
         "theme"
     ],
     "scripts": {
-        "dev": "concurrently \"npm run sync\" \"npm run watch\" \"npm run sass\"",
+        "dev": "concurrently \"npm run sync\" \"npm run nodemon\" \"npm run watch\" \"npm run sass\"",
         "sync": "browser-sync start --port 4444 --proxy http://localhost:2369 --files 'assets/**/*' --no-ghost-mode",
-        "watch": "cd ../../.. && nodemon current/index.js --watch content/themes/discoverer --ext hbs,js",
+        "nodemon": "cd ../../.. && nodemon current/index.js --watch content/themes/discoverer --ext hbs",
+        "watch": "webpack --watch --progress",
         "sass": "gulp watch",
         "start": "gulp"
     },
     "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.4",
         "browser-sync": "^2.18.13",
         "concurrently": "^3.5.1",
         "gscan": "^1.3.0",
@@ -42,7 +45,8 @@
         "gulp-nodemon": "^2.2.1",
         "gulp-sass": "^3.1.0",
         "gulp-zip": "4.0.0",
-        "nodemon": "^1.14.11"
+        "nodemon": "^1.14.11",
+        "webpack": "^3.11.0"
     },
     "config": {
         "posts_per_page": 25
