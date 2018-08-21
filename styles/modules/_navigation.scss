@@ -1,7 +1,7 @@
 .navigation {
     @include hidden;
     
-    @include atCustom(900px) {
+    @include atCustom(1000px) {
         margin-left: 40px;
         padding-bottom: 4px;
         @include visible;

@@ -26,13 +26,9 @@
 	}
 
 	&__post, &__tag {
-		height: 400px;
+		height: 300px;
 		overflow: hidden;
 		position: relative;
-				
-		@include atMedium {
-			height: 300px;
-		}
 	}
 
 	&__content {

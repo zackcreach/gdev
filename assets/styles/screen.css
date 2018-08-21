@@ -826,8 +826,8 @@ body {
 }
 
 .post-card {
-  -ms-flex: 1 1 300px;
-  flex: 1 1 300px;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
@@ -843,6 +843,19 @@ body {
   box-shadow: 7px 4px 10px rgba(0,0,0,0.08);
   transition: all .3s ease;
   transform: translate3D(0, -1px, 0)
+}
+
+
+@media (min-width: 704px) {
+  .post-card {
+      flex: 0 1 calc(50% - 40px);
+  }
+}
+
+@media (min-width: 1044px) {
+  .post-card {
+      flex: 0 1 calc(33.33% - 40px);
+  }
 }
 
 .post-card-image-link {

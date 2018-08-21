@@ -3,13 +3,14 @@
   overflow: hidden;
 
   &__container {
-    padding: 80px $gutter-spacing-mobile 80px $gutter-spacing-mobile;
+    padding: 80px $gutter-spacing-mobile 40px $gutter-spacing-mobile;
     background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     
     @include atMedium {
+      padding: 80px $gutter-spacing-mobile 80px $gutter-spacing-mobile;
       flex-wrap: nowrap;
     }
     

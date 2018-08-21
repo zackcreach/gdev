@@ -1,13 +1,37 @@
 .social {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0 !important;
   list-style: none !important;
   
+  @include atMedium {
+    justify-content: flex-end;
+  }
+  
+  &--l-align {
+    @include atMedium {
+      justify-content: flex-start;
+    }
+  }
+
+  &__share {
+    justify-content: space-between;
+  }
+  
   &__item {
+    flex: 0 0 auto;
     display: block;
     text-align: center;
     transition: $transition-ease;
+    padding: 0 12px 0 12px;
+    
+    &:first-of-type {
+      padding: 0 12px 0 0;
+    }
+    
+    &:nth-of-type(3) {
+      padding: 0 0 0 12px;
+    }
   }
   
   &__item:hover {
@@ -17,9 +41,25 @@
   &__item:active {
     transform: translateY(1px);
   }
+
+  &__share-item {
+    cursor: pointer;
+  }
+  
+  &__share-item:hover {
+    transform: translateY(-2px);
+  }
+  
+  &__share-item:active {
+    transform: translateY(1px);
+  }
   
   &__image {
     height: 18px;
     margin: 0 !important;
     }
+  
+  &__image--share {
+    height: 41px;
+  }
 }

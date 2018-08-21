@@ -1,5 +1,6 @@
 // Base styles
 @import 'base/variables';
+@import 'base/functions';
 @import 'base/mixins';
 @import 'base/global';
 
@@ -14,6 +15,7 @@
 @import 'modules/menu';
 @import 'modules/modal';
 @import 'modules/navigation';
+@import 'modules/search';
 @import 'modules/row';
 @import 'modules/featured';
 @import 'modules/gallery';
@@ -22,3 +24,4 @@
 @import 'modules/post';
 @import 'modules/tag';
 @import 'modules/social';
+@import 'modules/google-ad';

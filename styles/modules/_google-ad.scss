@@ -1,0 +1,14 @@
+.google-ad {
+  display: inline-block;
+
+  &__banner {
+    width: 320px;
+    height: 100px;
+
+    @include atMedium {
+      width: 728px;
+      height: 90px;
+    }
+  }
+
+}

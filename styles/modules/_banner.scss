@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 2;
     
     &__container {
         position: relative;
@@ -16,7 +16,7 @@
 
         @include atMedium {
             justify-content: space-between;
-            padding: 0 80px 0 80px;
+            padding: 0 38px 0 80px;
         }
         
         @include atXLarge {

@@ -20,20 +20,76 @@
         </div>
     </div>
     <div class="post__container">
-        <div class="post__header">
+        {{!-- <div class="post__header">
+            <div class="post__module-social--l-padding post__module-share">
+                <div class="social social__share">
+                    <a
+                        class="social__share-item share__email"
+                        target="_blank"
+                    >
+                        <img class="social__image social__image--share" src="/assets/images/icon-email--pink.png" />
+                    </a>
+                    <a
+                        class="social__share-item share__facebook"
+                        target="_blank"
+                    >
+                        <img class="social__image social__image--share" src="/assets/images/icon-facebook--blue.png" />
+                    </a>
+                    <a
+                        class="social__share-item share__twitter"
+                        target="_blank"
+                    >
+                        <img class="social__image social__image--share" src="/assets/images/icon-twitter--blue.png" />
+                    </a>
+                </div>
+            </div>
+        </div> --}}
+        <div class="post__content">
+            {{content}}
+            <div class="post__module">
+                <div class="post__module-container">
+                    <div class="post__module-content">
+                        <div class="post__module-title">
+                            <span class="post__module--bold">Enjoy this article? </span>
+                            Share it with a friend
+                        </div>
+                    </div>
+                    <div class="post__module-social post__module-social--l-padding post__module-share">
+                        <div class="social social__share">
+                            <a
+                                class="social__share-item share__email"
+                                target="_blank"
+                            >
+                                <img class="social__image social__image--share" src="/assets/images/icon-email--pink.png" />
+                            </a>
+                            <a
+                                class="social__share-item share__facebook"
+                                target="_blank"
+                            >
+                                <img class="social__image social__image--share" src="/assets/images/icon-facebook--blue.png" />
+                            </a>
+                            <a
+                                class="social__share-item share__twitter"
+                                target="_blank"
+                            >
+                                <img class="social__image social__image--share" src="/assets/images/icon-twitter--blue.png" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post__footer">
             <div class="post__date">
                 {{date published_at format="MMM DD, YYYY"}}
             </div>
             <div class="post__categories">
-                {{#foreach tags limit="6"}}
+                {{#foreach tags limit="6" visibility="public"}}
                     <a class="post__category" href="{{url}}">
                         {{name}}
                     </a>
                 {{/foreach}}
             </div>
-        </div>
-        <div class="post__content">
-            {{content}}
         </div>
         {{> "modal"}}
     </div>
@@ -42,3 +98,18 @@
 {{> "gallery"}}
 
 {{/post}}
+
+<script type="text/javascript" >
+    if (location && document.querySelectorAll("[class*='share__']")) {
+        const href = location.href;
+        const title = document.title.replace("|", "-");
+
+        const emails = document.querySelectorAll(".share__email");
+        const facebooks = document.querySelectorAll(".share__facebook");
+        const twitters = document.querySelectorAll(".share__twitter");
+        
+        emails.forEach((email) => email.href = "mailto:?subject=" + title + "&body=" + href);
+        facebooks.forEach((facebook) => facebook.href = "https://www.facebook.com/sharer/sharer.php?u=" + href);
+        twitters.forEach((twitter) => twitter.href = "https://twitter.com/home?status=" + title + "%0D%0D" + href);
+    }
+</script>

@@ -38,13 +38,13 @@ export function apiRequest(endpoint, type, params, token, callback) {
     req.end(function(error, response) {
         // Session expired --> log user out
         if (response && response.status == 401) {
-            if (users.getUser()) {
-                users.deleteUser();
-                users.deleteUserToken();
+            if (getUser()) {
+                deleteUser();
+                deleteUserToken();
 
                 alert("Your current session has expired. Please log in again");
 
-                users.checkLoginState();
+                checkLoginState();
                 return;
             }
         }
